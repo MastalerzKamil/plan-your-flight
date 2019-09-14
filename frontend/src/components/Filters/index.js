@@ -3,9 +3,7 @@ import './index.css';
 
 function Filters() {
   return (
-    <div className='Filters'>
-      
-    </div>
+    <div className='Filters' />
   );
 }
 
