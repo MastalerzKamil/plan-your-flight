@@ -1,3 +1,4 @@
+/* eslint-disable import/no-extraneous-dependencies */
 import React from 'react';
 import { linkTo } from '@storybook/addon-links';
 import { Welcome } from '@storybook/react/demo';
