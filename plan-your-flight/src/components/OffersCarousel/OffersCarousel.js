@@ -6,7 +6,7 @@ var Carousel = require("react-responsive-carousel").Carousel;
 function OffersCarousel() {
   return (
     <div className="OffersCarousel__container">
-      <Carousel showArrows={true} dynamicHeight={false} showStatus={false}>
+      <Carousel showArrows={true} dynamicHeight={false} showStatus={false} showThumbs={false}>
         <div  className="carousel-container">
           <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1353&q=80" />
           <div className="centered title-small">Morze</div>
