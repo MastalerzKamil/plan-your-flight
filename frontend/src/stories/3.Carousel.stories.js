@@ -7,5 +7,5 @@ export default {
 
 
 export const Menu = () => (
-  <OffersCarousel/>
+  <OffersCarousel />
 );

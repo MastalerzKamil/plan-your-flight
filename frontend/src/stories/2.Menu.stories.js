@@ -1,7 +1,5 @@
 import React from 'react';
-import { action } from '@storybook/addon-actions';
-import { Button } from '@storybook/react/demo';
-import MainMenu from '../components/MainMenu/MainMenu';
+import MainMenu from 'components/MainMenu';
 
 export default {
   title: 'Menu',
@@ -9,5 +7,5 @@ export default {
 
 
 export const Menu = () => (
-  <MainMenu/>
+  <MainMenu />
 );
