@@ -6,6 +6,6 @@ export default {
 };
 
 
-export const Menu = () => (
+export const Displays = () => (
   <OffersCarousel />
 );
