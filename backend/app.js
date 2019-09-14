@@ -1,6 +1,7 @@
 const express = require("express");
 const request = require("request");
 const bodyParser = require("body-parser");
+const jq = require("node-jq");
 
 const app = express();
 const port = 3000;
@@ -98,6 +99,22 @@ const getFlights = async ({
   });
 };
 
+const parseFlightsData = json => {
+  let filter = ".data[][]";
+
+  return new Promise((res, rej) => {
+    jq.run(filter, json, { input: "json" })
+      .then(output => {
+        //console.log(output);
+        res(output);
+      })
+      .catch(err => {
+        //  console.error(err);
+        rej(err);
+      });
+  });
+};
+
 app.get("/airport", async (req, res) => {
   let response = await getAirports();
   res.send(response);
@@ -106,7 +123,14 @@ app.get("/airport", async (req, res) => {
 app.post("/flights", async (req, res) => {
   console.info("request", req.body);
   let response = await getFlights(req.body);
-  res.send(response);
+  console.log(response);
+  if (response.status != 200) {
+    res.status(500).send("error");
+    return;
+  }
+
+  let parsedResponse = await parseFlightsData(response);
+  res.type('json').send(parsedResponse);
 });
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
