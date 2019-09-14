@@ -2,6 +2,7 @@ import React from 'react';
 import { Input } from 'semantic-ui-react'
 
 import './index.css';
+import 'semantic-ui-css/semantic.min.css';
 
 function Filters({ actions }) {
   return (
