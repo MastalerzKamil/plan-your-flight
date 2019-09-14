@@ -1,13 +1,15 @@
 import React from 'react';
-import { Button } from 'semantic-ui-react'
+import { Input } from 'semantic-ui-react'
 
 import './index.css';
 import 'semantic-ui-css/semantic.min.css';
 
-function Filters() {
+function Filters({ actions }) {
   return (
     <div className='Filters'>
-      <Button>Click Here</Button>
+      <div className='Filters__input'>
+        <Input focus onChange={(e) => actions.setStartDate(e.target.value)} placeholder='Od' />
+      </div>
     </div>
   );
 }

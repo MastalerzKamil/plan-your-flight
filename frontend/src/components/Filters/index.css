@@ -1,5 +1,11 @@
 .Filters {
   display: flex;
   flex-direction: column;
+  background: #093479;
+}
+
+.Filters__input {
+  display: flex;
   margin: 20px 10px;
+  width: 100px;
 }
