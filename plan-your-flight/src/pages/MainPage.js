@@ -1,10 +1,12 @@
 import React from 'react';
 import './App.css';
+import MainMenu from '../components/MainMenu/MainMenu';
 
 function MainPage() {
   return (
     <div className="Root">
-      <text>Yo, yo</text>
+      <MainMenu/>
+      <text>loremipsum</text>
     </div>
   );
 }
