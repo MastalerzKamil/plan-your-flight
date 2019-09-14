@@ -1,0 +1,18 @@
+.carousel {
+    max-height: 500px;  /* change this to whatever you want */
+    overflow: hidden;
+}
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .carousel-container {
+    position: relative;
+    text-align: center;
+    color: white;
+  }
+  .title-small{
+    font-family: "Verdana", serif;
+  }

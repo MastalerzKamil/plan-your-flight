@@ -7,7 +7,6 @@ export default {
   title: 'Menu',
 };
 
-export const text = () => <Button onClick={action('clicked')}>Hello Button</Button>;
 
 export const Menu = () => (
   <MainMenu/>
