@@ -1,16 +1,15 @@
 import React from 'react';
-import { Router } from 'react-router-dom';
+import { Router, Route } from 'react-router-dom';
+import MainPage from 'pages/MainPage';
 
 function App() {
   return (
     <Router>
       <div>
-        <Route path="/" component={MainPage} />
-        {/* <Route path="/users" component={Users} />
-        <Route path="/contact" component={Contact} /> */}
+        <Route exact path='/' component={MainPage} />
       </div>
     </Router>
-  )
+  );
 }
 
 export default App;

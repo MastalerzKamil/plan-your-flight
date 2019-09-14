@@ -1,11 +1,11 @@
 import React from 'react';
 import './App.css';
-import MainMenu from '../components/MainMenu/MainMenu';
+import MainMenu from 'components/MainMenu';
 
 function MainPage() {
   return (
-    <div className="Root">
-      <MainMenu/>
+    <div className='Root'>
+      <MainMenu />
       <text>loremipsum</text>
     </div>
   );
