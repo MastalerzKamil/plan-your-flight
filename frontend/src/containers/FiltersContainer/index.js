@@ -3,7 +3,10 @@ import { bindActionCreators } from 'redux';
 import Filters from 'components/Filters';
 
 const mapStateToProps = state => ({
-  displayDialog: state.modalReducer,
+  startDate: state.categoryFilterReducer,
+  endDate: state.snakerSizeFilterReducer,
+  fromFlight: state.topsSizeFilterReducer,
+  toFlight: state.searchFilterReducer,
 });
 
 const mapDispatchToProps = dispatch => ({
