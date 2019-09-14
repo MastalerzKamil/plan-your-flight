@@ -4,8 +4,26 @@
   background: #093479;
 }
 
-.Filters__input {
+.Filters__flightInput {
   display: flex;
-  margin: 20px 10px;
+  margin: 20px 70px; 
+  width: 500px;
+}
+
+.Filters__dateInput {
+  display: flex;
+  margin: 0 70px 20px 70px; 
   width: 100px;
+}
+
+.Filters__row {
+  display: flex;
+  flex-direction: row;
+}
+
+.Filters__confirm {
+  display: flex;
+  margin: 20px 70px; 
+  width: 300px;
+  height: 40px;
 }
