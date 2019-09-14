@@ -1,12 +1,12 @@
 import React from 'react';
 import { HashRouter as Router, Route } from 'react-router-dom';
-import MainPage from 'pages/MainPage';
+import Home from 'pages/Home';
 
 function App() {
   return (
     <Router>
       <div>
-        <Route exact path='/' component={MainPage} />
+        <Route exact path='/' component={Home} />
       </div>
     </Router>
   );

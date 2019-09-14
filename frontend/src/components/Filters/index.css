@@ -1,0 +1,6 @@
+.Filters {
+  display: flex;
+  flex-direction: column;
+  margin: 20px 10px;
+  background: #093479;
+}
