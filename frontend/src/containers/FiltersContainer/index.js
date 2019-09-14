@@ -1,18 +1,16 @@
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import Filters from 'components/Filters';
+import FilterActions from 'actions/filter'
 
 const mapStateToProps = state => ({
-  startDate: state.categoryFilterReducer,
-  endDate: state.snakerSizeFilterReducer,
-  fromFlight: state.topsSizeFilterReducer,
-  toFlight: state.searchFilterReducer,
+  flightFilter: state.flightFilterReducer,
+  dateFilter: state.dateFilterReducer,
 });
 
 const mapDispatchToProps = dispatch => ({
   actions: bindActionCreators({
-    ...ModalActions,
-    ...CheckoutActions,
+    ...FilterActions,
   }, dispatch),
 });
 
