@@ -1,7 +1,7 @@
-import * as endDateActions from 'actions/filter/endDateFilter/pure';
-import * as startDateActions from 'actions/filter/startDate/pure';
-import * as flightFromActions from 'actions/filter/flightFromFilter/pure';
-import * as flightToActions from 'actions/filter/flightToFilter/pure';
+import * as endDateActions from './endDateFilter/pure';
+import * as startDateActions from './startDateFilter/pure';
+import * as flightFromActions from './flightFromFilter/pure';
+import * as flightToActions from './flightToFilter/pure';
 
 const actions = Object.assign(
   {},
