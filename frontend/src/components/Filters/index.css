@@ -6,3 +6,8 @@
 .Filters__grid {
   width: 800px;
 }
+
+.Filters__checkbox label {
+  color:white !important;
+  margin-right: 2em;
+}

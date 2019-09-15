@@ -57,9 +57,10 @@ class QuestionForm extends React.Component {
   }
 
   render() {
-    console.log(this.state);
     return (
       <div className="QuestionForm">
+        <div className='QuestionForm__title'>Spróbujmy wybrać razem kierunek</div>
+        <div className='QuestionForm__subtitle'>Aby nic nie sugerować wybierz zdjęcie miejsca które bardziej Ci się podoba</div>
         <Segment placeholder>
           {this.isFinished() ? (
             <Header as="h2" icon textAlign="center">
