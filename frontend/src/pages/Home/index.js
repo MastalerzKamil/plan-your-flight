@@ -3,6 +3,7 @@ import './index.css';
 import FiltersContainer from 'containers/FiltersContainer';
 import OffersCarousel from 'components/OffersCarousel'
 import QuestionForm from 'components/QuestionForm';
+import OffersList from 'components/OffersList';
 
 function Home() {
   return (
@@ -10,6 +11,9 @@ function Home() {
       <FiltersContainer />
       <OffersCarousel />
       <QuestionForm/>
+      <div className='Home__offersList'>
+        <OffersList />
+      </div>
     </div>
   );
 }
