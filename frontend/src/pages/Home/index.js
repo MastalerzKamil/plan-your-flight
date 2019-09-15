@@ -12,6 +12,7 @@ function Home() {
       <OffersCarousel />
       <QuestionForm/>
       <div className='Home__offersList'>
+      <div className='Home__offersTitle'>Oto przygotowane przez nas oferty dla Ciebie</div>
         <OffersList />
       </div>
     </div>
