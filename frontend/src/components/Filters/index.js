@@ -11,79 +11,107 @@ const airports = [
   { key: "JFK", value: "Nowy Jork", text: "Nowy Jork (JFK)" },
   { key: "MIA", value: "Miami", text: "Miami (MIA)" }
 ];
-function Filters({ actions, flightFilter, startDate, endDate }) {
-  console.log(actions);
-  return (
-    <div className="Filters">
-      <Grid className="Filters__grid">
-        <Grid.Row columns={2}>
-          <Grid.Column>
-            <Dropdown
-              className="Filters__flightInput"
-              onChange={e => actions.setFromFlight(e.target.value)}
-              placeholder="Skąd lecimy"
-              search
-              selection
-              options={airports}
-              fluid
-            />
-          </Grid.Column>
-          <Grid.Column>
-            <Dropdown
-              className="Filters__flightInput"
-              onChange={e => actions.setToFlight(e.target.value)}
-              placeholder="Dokąd lecimy"
-              search
-              selection
-              options={airports}
-              fluid
-            />
-          </Grid.Column>
-        </Grid.Row>
+class Filters extends Component {
 
-        <Grid.Row columns={3}>
-          <Grid.Column>
-            <DateInput
-              className="Filters__dateInput"
-              name="startDate"
-              placeholder="Od kiedy"
-              value={startDate}
-              iconPosition="right"
-              onChange={(e, { name, value }) => actions.setStartDate(value)}
-              fluid
-            />
-          </Grid.Column>
-          <Grid.Column>
-            <DateInput
-              className="Filters__dateInput"
-              name="endDate"
-              placeholder="Od kiedy"
-              value={endDate}
-              iconPosition="right"
-              onChange={(e, { name, value }) => actions.setEndDate(value)}
-              fluid
-            />
-          </Grid.Column>
-          <Grid.Column>
-            <Button className="Filters__confirm" color="red" fluid>
-              Zatwierdź
-            </Button>
-          </Grid.Column>
-        </Grid.Row>
-        <Grid.Row columns={1}>
-          <Grid.Column>
-            <div className="Filters__checkbox">
-              <Checkbox
-                className="Filters__checkbox"
-                checked={true}
-                label="Bilet w 2 strony"
+  constructor() {
+    super();
+    this.state = {
+      startDate: '',
+      endDate: ''
+    }
+  }
+
+  handleFromDateChange = (e, {name, value}) => {
+    const { actions } = this.props;
+    if (this.state.hasOwnProperty(name)) {
+      this.setState({ [name]: value });
+    }
+    actions.setStartDate(value)
+  }
+
+  handleEndDateChange = (e, {name, value}) => {
+    const { actions } = this.props;
+    if (this.state.hasOwnProperty(name)) {
+      this.setState({ [name]: value });
+    }
+    actions.setEndDate(value)
+  }
+
+  render() {
+    const { actions } = this.props;
+    const { startDate, endDate } = this.state;
+    return (
+      <div className="Filters">
+        <Grid className="Filters__grid">
+          <Grid.Row columns={2}>
+            <Grid.Column>
+              <Dropdown
+                className="Filters__flightInput"
+                onChange={e => actions.setFromFlight(e.target.value)}
+                placeholder="Skąd lecimy"
+                search
+                selection
+                options={airports}
+                fluid
               />
-            </div>
-          </Grid.Column>
-        </Grid.Row>
-      </Grid>
-    </div>
-  );
+            </Grid.Column>
+            <Grid.Column>
+              <Dropdown
+                className="Filters__flightInput"
+                onChange={e => actions.setToFlight(e.target.value)}
+                placeholder="Dokąd lecimy"
+                search
+                selection
+                options={airports}
+                fluid
+              />
+            </Grid.Column>
+          </Grid.Row>
+  
+          <Grid.Row columns={3}>
+            <Grid.Column>
+              <DateInput
+                className="Filters__dateInput"
+                name="startDate"
+                placeholder="Od kiedy"
+                value={startDate}
+                iconPosition="right"
+                onChange={(e, { name, value }) => this.handleFromDateChange(e, { name, value })}
+                fluid
+              />
+            </Grid.Column>
+            <Grid.Column>
+              <DateInput
+                className="Filters__dateInput"
+                name="endDate"
+                placeholder="Od kiedy"
+                value={endDate}
+                iconPosition="right"
+                onChange={(e, { name, value }) => this.handleEndDateChange(e, { name, value })}
+                fluid
+              />
+            </Grid.Column>
+            <Grid.Column>
+              <Button className="Filters__confirm" color="red" fluid>
+                Zatwierdź
+              </Button>
+            </Grid.Column>
+          </Grid.Row>
+          <Grid.Row columns={1}>
+            <Grid.Column>
+              <div className="Filters__checkbox">
+                <Checkbox
+                  className="Filters__checkbox"
+                  checked={true}
+                  label="Bilet w 2 strony"
+                />
+              </div>
+            </Grid.Column>
+          </Grid.Row>
+        </Grid>
+      </div>
+    );
+  }
 }
 
 export default Filters;
