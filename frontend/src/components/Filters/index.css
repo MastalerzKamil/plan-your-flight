@@ -19,12 +19,12 @@
 .Filters__row {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-items: flex-start;
 }
 
 .Filters__confirm {
   display: flex;
-  margin: 20px 570px 20px 0; 
+  margin: 20px 70px 20px 0; 
   width: 200px;
   height: 40px;
 }
