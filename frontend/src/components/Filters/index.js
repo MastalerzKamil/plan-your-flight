@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Input, Grid, Button, Checkbox, Dropdown } from "semantic-ui-react";
 import { DateInput } from "semantic-ui-calendar-react";
+import * as moment from 'moment';
 
 import "./index.css";
 import "semantic-ui-css/semantic.min.css";
@@ -26,7 +27,7 @@ class Filters extends Component {
     if (this.state.hasOwnProperty(name)) {
       this.setState({ [name]: value });
     }
-    actions.setStartDate(value)
+    actions.setStartDate(value);
   }
 
   handleEndDateChange = (e, {name, value}) => {
@@ -34,7 +35,18 @@ class Filters extends Component {
     if (this.state.hasOwnProperty(name)) {
       this.setState({ [name]: value });
     }
-    actions.setEndDate(value)
+    actions.setEndDate(value);
+  }
+  submitFilters = () => {
+    const { actions } = this.props;
+    const { startDate, endDate } = this.state;
+    this.setState({ 
+      startDate: moment(startDate,'DD-MM-YYYY').format("DDMMYYYY"),
+      endDate: moment(endDate, "DDMMYYYY"),
+    });
+    actions.setStartDate(this.state.startDate);
+    actions.setEndDate(this.state.endDate);
+
   }
 
   render() {
@@ -92,7 +104,7 @@ class Filters extends Component {
               />
             </Grid.Column>
             <Grid.Column>
-              <Button className="Filters__confirm" color="red" fluid>
+              <Button className="Filters__confirm" color="red" fluid onClick={()=>this.submitFilters()}>
                 Zatwierdź
               </Button>
             </Grid.Column>
