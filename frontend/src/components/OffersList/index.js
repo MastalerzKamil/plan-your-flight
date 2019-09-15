@@ -16,24 +16,46 @@ const React = require("react");
 function OffersList() {
   let items = [
     {
-      url: "https://react.semantic-ui.com/images/avatar/small/helen.jpg",
-      title: "Kasia"
+      id: 0,
+      title:'Grecja',
+      price: 1800,
+      url:
+        "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1353&q=80"
     },
     {
-      url: "https://react.semantic-ui.com/images/avatar/small/christian.jpg",
-      title: "Tomasz"
+      id: 1,
+      title:'Szczecin',
+      price: 150,
+      url:
+        "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1353&q=80"
     },
     {
-      url: "https://react.semantic-ui.com/images/avatar/small/daniel.jpg",
-      title: "Kamil"
+      id: 2,
+      title:'Tokyo',
+      price: 3800,
+      url:
+        "https://images.unsplash.com/photo-1492428750937-c93ff58fe46c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"
     },
     {
-      url: "https://react.semantic-ui.com/images/avatar/small/daniel.jpg",
-      title: "Kamil"
+      id: 3,
+      title:'Bankok',
+      price: 4200,
+      url:
+        "https://images.unsplash.com/photo-1501333899216-493b82f53fc5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"
     },
     {
-      url: "https://react.semantic-ui.com/images/avatar/small/daniel.jpg",
-      title: "Kamil"
+      id: 4,
+      title:'Google Earth',
+      price: 10,
+      url:
+        "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+    },
+    {
+      id: 5,
+      title:'Google Maps',
+      price: 2.5,
+      url:
+        "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"
     }
   ];
   return (
@@ -50,17 +72,17 @@ function OffersList() {
                       <Grid.Column>
                         <Card className="OffersList__card">
                           <Image
-                            src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1353&q=80"
+                            src={e.url}
                             className="OffersList__cardImage"
                           />
                           <Card.Content>
                             <Header floated="right">
                               <Label as="a" tag color="blue">
                                 <Icon name="dollar" />
-                                10.00
+                                {e.price}
                               </Label>
                             </Header>
-                            <Card.Header>Gdańsk</Card.Header>
+                            <Card.Header>{e.title}</Card.Header>
                             <Card.Meta>Joined in 2016</Card.Meta>
                             <Card.Description>
                               Firma pokrywa wszyskie koszty
