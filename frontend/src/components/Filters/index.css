@@ -19,11 +19,17 @@
 .Filters__row {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
 }
 
 .Filters__confirm {
   display: flex;
-  margin: 20px 70px; 
-  width: 300px;
+  margin: 20px 570px 20px 0; 
+  width: 200px;
   height: 40px;
+}
+
+.Filters__dates {
+  display: flex;
+  justify-items: flex-start;
 }

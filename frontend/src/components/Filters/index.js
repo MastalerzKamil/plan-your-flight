@@ -1,10 +1,11 @@
 import React from 'react';
 import { Input, Button } from 'semantic-ui-react'
+import { DateInput } from 'semantic-ui-calendar-react';
 
 import './index.css';
 import 'semantic-ui-css/semantic.min.css';
 
-function Filters({ actions, flightFilter, dateFilter }) {
+function Filters({ actions, flightFilter, startDate, endDate }) {
   return (
     <div className='Filters'>
       <div className='Filters__row'>
@@ -13,8 +14,24 @@ function Filters({ actions, flightFilter, dateFilter }) {
       </div>
 
       <div className='Filters__row'>
-        <Input className='Filters__dateInput' focus onChange={(e) => actions.setStartDate(e.target.value)} placeholder='Od kiedy' />
-        <Input className='Filters__dateInput' focus onChange={(e) => actions.setEndDate(e.target.value)} placeholder='Do kiedy' />
+        <div className='Filters__dates'>
+          <DateInput
+            className='Filters__dateInput'
+            name="fromDate"
+            placeholder="Od kiedy"
+            value={startDate}
+            iconPosition="right"
+            onChange={(e, {name, value}) => actions.setStartDate(value)}
+          />
+          <DateInput
+            className='Filters__dateInput'
+            name="toDate"
+            placeholder="Od kiedy"
+            value={endDate}
+            iconPosition="right"
+            onChange={(e, {name, value}) => actions.setEndDate(value)}
+          />
+        </div>
         <Button className='Filters__confirm' color='red'>Zatwierdź</Button>
       </div>
     </div>

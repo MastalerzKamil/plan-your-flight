@@ -1,6 +1,7 @@
 import * as actionNames from 'constants/dateFilterActionTypes';
 
 export default function (state = {}, action) {
+  console.log(state)
   switch (action.type) {
     case actionNames.SET_START_DATE: {
       return {
