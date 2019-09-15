@@ -1,42 +1,8 @@
 .Filters {
-  display: flex;
-  flex-direction: column;
   background: #093479;
+  padding:2em;
 }
 
-.Filters__flightInput {
-  display: flex;
-  margin: 20px 70px; 
-  width: 500px;
-}
-
-.Filters__dateInput {
-  display: flex;
-  margin: 0 70px 20px 70px; 
-  width: 100px;
-}
-
-.Filters__row {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-
-.Filters__confirm {
-  display: flex;
-  margin: 20px 570px 20px 0; 
-  width: 200px;
-  height: 40px;
-}
-
-.Filters__dates {
-  display: flex;
-  justify-items: flex-start;
-}
-
-.Home__offersList {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 50px 10px;
+.Filters__grid {
+  width: 800px;
 }
