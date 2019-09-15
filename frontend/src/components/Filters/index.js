@@ -22,6 +22,7 @@ class Filters extends Component {
   }
 
   handleFromDateChange = (e, {name, value}) => {
+    const { actions } = this.props;
     if (this.state.hasOwnProperty(name)) {
       this.setState({ [name]: value });
     }
@@ -29,6 +30,7 @@ class Filters extends Component {
   }
 
   handleEndDateChange = (e, {name, value}) => {
+    const { actions } = this.props;
     if (this.state.hasOwnProperty(name)) {
       this.setState({ [name]: value });
     }
@@ -74,7 +76,7 @@ class Filters extends Component {
                 placeholder="Od kiedy"
                 value={startDate}
                 iconPosition="right"
-                onChange={(e, { name, value }) => }
+                onChange={(e, { name, value }) => this.handleFromDateChange(e, { name, value })}
                 fluid
               />
             </Grid.Column>
