@@ -33,3 +33,7 @@
   display: flex;
   justify-items: flex-start;
 }
+
+.Filters__checkbox {
+  color: #ffff;
+}

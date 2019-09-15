@@ -1,5 +1,5 @@
 import React from 'react';
-import { Input, Button, Checkbox, Dropdown } from 'semantic-ui-react'
+import { Button, Checkbox, Dropdown } from 'semantic-ui-react'
 import { DateInput } from 'semantic-ui-calendar-react';
 
 import './index.css';
@@ -21,8 +21,8 @@ function Filters({ actions, flightFilter, startDate, endDate }) {
       </div>
 
       <div className='Filters__row'>
-        <Checkbox label='Bilet w 2 strony' />
-        <Checkbox label='Bilet w jedną stronę' />
+        <Checkbox className='Filters__checkbox' checked={true} label='Bilet w 2 strony' />
+        <Checkbox className='Filters__checkbox' label='Bilet w jedną stronę' />
       </div>
 
       <div className='Filters__row'>
