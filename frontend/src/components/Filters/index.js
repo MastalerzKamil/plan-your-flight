@@ -49,9 +49,7 @@ function Filters({ actions, flightFilter, startDate, endDate }) {
               placeholder="Od kiedy"
               value={startDate}
               iconPosition="right"
-              onChange={(e, { name, value }) =>
-                this.handleStartDate(e, { name, value })
-              }
+              onChange={(e, { name, value }) => actions.setStartDate(value)}
               fluid
             />
           </Grid.Column>
@@ -62,9 +60,7 @@ function Filters({ actions, flightFilter, startDate, endDate }) {
               placeholder="Od kiedy"
               value={endDate}
               iconPosition="right"
-              onChange={(e, { name, value }) =>
-                this.handleEndDate(e, { name, value })
-              }
+              onChange={(e, { name, value }) => actions.setEndDate(value)}
               fluid
             />
           </Grid.Column>
