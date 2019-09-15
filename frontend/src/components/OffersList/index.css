@@ -1,0 +1,10 @@
+.OffersList .OffersList__card{
+    width:100%;
+}
+.OffersList--tight{
+    max-width: 1000px;
+}
+
+.OffersList__cardImage{
+    max-height: 10em;
+}
