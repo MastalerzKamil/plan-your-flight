@@ -5,6 +5,15 @@ export default {
   title: "Question Form"
 };
 
+export const All = () => (
+  <div>
+    <QuestionForm counter={0} />
+    <QuestionForm counter={1} />
+    <QuestionForm counter={2} />
+    <QuestionForm counter={3} />
+  </div>
+);
+
 export const DefaultState = () => <QuestionForm counter={0} />;
 
 export const FirstState = () => <QuestionForm counter={1} />;
