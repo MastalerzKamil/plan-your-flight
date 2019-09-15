@@ -38,14 +38,20 @@ class Filters extends Component {
     actions.setEndDate(value);
   }
   submitFilters = () => {
-    const { actions } = this.props;
+    const { actions, fromFlight, toFlight } = this.props;
     const { startDate, endDate } = this.state;
     this.setState({ 
       startDate: moment(startDate,'DD-MM-YYYY').format("DDMMYYYY"),
       endDate: moment(endDate, "DDMMYYYY"),
     });
+    /*
     actions.setStartDate(this.state.startDate);
     actions.setEndDate(this.state.endDate);
+    */
+    console.log(this.state);
+    console.log(this.props);
+    // window.location.assign(`https://bookerproxy.lot.com/service.php?COUNTRY_CODE=PL&LANGUAGE_CODE=PL&ORIGIN=${fromFlight}&DESTINATION=${toFlight}&DEPARTURE_DATE={${this.props.startDate}}&ARRIVAL_DATE={${this.props.endDate}}&ADULT_COUNT={adults}&CHILD_COUNT=0&INFANT_COUNT=0&PARTNER=TFFNZEZK88W4&CLASS=E&utm_source=github&utm_medium=api`);
+    window.location.assign("https://bookerproxy.lot.com/service.php?COUNTRY_CODE=PL&LANGUAGE_CODE=PL&ORIGIN=WAW&DESTINATION=CDG&DEPARTURE_DATE=15092019&ARRIVAL_DATE=22092019&ADULT_COUNT=1&CHILD_COUNT=0&INFANT_COUNT=0&PARTNER=TFFNZEZK88W4&CLASS=E&utm_source=github&utm_medium=api");
 
   }
 
