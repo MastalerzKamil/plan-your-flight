@@ -13,7 +13,8 @@
     "redux-thunk": "^2.3.0",
     "semantic-ui-calendar-react": "^0.15.3",
     "semantic-ui-css": "^2.4.1",
-    "semantic-ui-react": "^0.88.1"
+    "semantic-ui-react": "^0.88.1",
+    "split-array": "^1.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
