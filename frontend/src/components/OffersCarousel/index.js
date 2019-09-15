@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/alt-text */
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
-import './OffersCarousel.css';
+import './index.css';
 
 const React = require('react');
 const { Carousel } = require('react-responsive-carousel');
